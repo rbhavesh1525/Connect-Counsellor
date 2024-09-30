@@ -1,0 +1,816 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.admin-panel-navbar {
+  display: flex;
+  align-items: center;
+  background-color: #fffdfd;
+  padding: 10px 20px;
+  text-align: center;
+  position: relative;
+  height: 80px;
+  border-bottom: 2px solid black;
+  font-family: 'Poppins', sans-serif; /* Example of a good-looking font */
+}
+.logo{
+  height: 50px;
+  width: 50px;
+}
+
+.admin-panel-navbar .menu-icon {
+  display: none;
+  font-size: 24px;
+  color: rgb(4, 4, 4);
+  cursor: pointer;
+}
+
+.admin-panel-navbar .nav-links {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.admin-panel-navbar a {
+  color: rgb(4, 2, 46);
+  margin: 0 10px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight:400;
+}
+
+.admin-panel-navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(6, 6, 6);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.admin-panel-navbar a:hover::after {
+  transform: scaleX(1);
+  margin-top: 2px;
+  transform-origin: bottom left;
+  height: 3px;
+}
+
+.admin-panel-navbar .logo {
+  margin-right: auto;
+  width: 130px;
+}
+
+
+
+.admin-logout-btn{
+  background-color: red;
+    color: white;
+    border: none; 
+    padding: 5px 15px;
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+}
+
+
+
+/* navbar end*/
+
+* .admin-panel-content {
+  padding: 10px;
+}
+
+* .admin-panel-blog-management {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+* .admin-panel-blog-list {
+  width: 65%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+* .admin-panel-new-blog {
+  width: 35%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+.select-blog-category{
+   margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+* .admin-panel-new-blog input,
+* .admin-panel-new-blog textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+* .admin-panel-new-blog textarea {
+  resize: none; /* Make the textarea non-resizable */
+}
+
+* .admin-panel-button {
+  padding: 10px;
+  background-color: #337ab7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+* .admin-panel-button:hover {
+  background-color: #0056b3;
+}
+
+* .admin-panel-button.delete {
+  background-color: #d9534f;
+}
+
+* .admin-panel-button.delete:hover {
+  background-color: #c9302c;
+}
+
+* .admin-panel-blog-list ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+* .admin-panel-blog-list li {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  position: relative;
+}
+
+* .admin-panel-blog-list li img {
+  display: block;
+  margin-top: 10px;
+}
+
+* .admin-panel-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #dff0d8;
+  color: #030303;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+* .admin-panel-blog-management {
+  position: relative; /* Ensure it's a positioned container for absolute positioning */
+}
+
+* .admin-panel-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0e66e9;
+  color: #edf1ed;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+
+
+/* admin panel course  css*/
+
+* .admin-panel-course-management {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.manage-course-heading{
+  margin-left: 40%;
+  margin-bottom: 20px;
+}
+
+* .admin-panel-new-course {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 50px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+* .admin-panel-course-list {
+  width: 50%;
+  margin-right: 50px;
+  background-color: white;
+  padding: 10px;
+  
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+* .admin-panel-new-course input,
+* .admin-panel-new-course textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+* .admin-panel-new-course textarea {
+  resize: none;
+}
+
+/* admin panel course right side */
+* .admin-panel-course-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.admin-panel-course-list li {
+  background-color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.admin-panel-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.admin-panel-button-container {
+  display: flex;
+  gap: 10px; /* Adjust gap as needed */
+}
+.admin-panel-edit-button {
+  background-color: #007bff;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+}
+
+* .admin-panel-button:hover {
+  background-color: #0056b3;
+}
+
+.admin-panel-delete-button {
+  background-color: #dc3545;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.admin-panel-button:hover {
+  opacity: 0.8;
+}
+.admin-panel-delete-button:hover {
+  background-color: #c82333;
+}
+
+.admin-panel-edit-button:hover {
+  background-color: #0056b3;
+}
+/* */
+
+* .admin-panel-adminbaner-h2 {
+  color: #9f18c9;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+
+
+.category-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Ensure the dropdown is responsive */
+}
+
+.category-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Ensures the input is responsive */
+}
+
+.category-dropdown input {
+  width: calc(100% - 42px); /* Adjust input width to leave space for the button */
+  padding-right: 42px; /* Ensure the text doesn't go under the button */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.drop-down-button {
+
+ 
+  border: 1px solid #ccc; /* Match the input border */
+  border-left: none; /* Remove the left border to connect with the input */
+  border-radius: 0 4px 4px 0; /* Rounded corners on the right side only */
+  background-color: white; /* Match the background color with input */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+ padding-bottom: 20px;
+}
+
+.dropdown-arrow {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  transform: translateY(-50%);
+  pointer-events: all;
+  margin-left: 2px;
+  border: 1px solid rgb(190, 186, 186);
+ border-radius: 5px;
+  padding: 6px;
+  cursor: pointer;
+  height: 44px;
+  width: 30px;
+ 
+}
+
+
+.dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 100%;
+  max-height: 200px; /* Set a max-height for the dropdown */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+}
+
+.dropdown-menu li {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd; /* Add border bottom for each category */
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+.category-dropdown.open .dropdown-menu {
+  display: block;
+}
+
+
+
+
+/*edit course css */
+
+.edit-course-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.edit-course-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.button-group {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.admin-panel-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.admin-panel-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Appointment CSS */
+* .admin_appointment_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensures the container takes at least the full height of the viewport */
+  background-color: white;
+}
+
+* .admin_appointment_content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px; /* Adjust this value to control the maximum width of the container */
+}
+
+* .admin_appointment_title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center; /* Center the title */
+  color: #333; /* Make sure the title color is visible */
+}
+
+* .admin_appointment_list {
+  list-style-type: none;
+  padding: 0;
+}
+
+* .admin_appointment_item {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+* .admin_appointment_details p {
+  margin: 0;
+  padding: 5px 0;
+  text-align: justify; /* Justify the text within the container */
+}
+
+* .admin_appointment_buttons {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+* .admin_appointment_button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
+
+* .admin_appointment_button.accept {
+  background-color: #28a745;
+}
+
+* .admin_appointment_button.reject {
+  background-color: #dc3545;
+}
+
+* .admin_appointment_button:hover {
+  opacity: 0.8;
+}
+
+/* Tablet styles (max-width: 768px) */
+@media (max-width: 768px) {
+  * .admin-panel-blog-management,
+  * .admin-panel-course-management {
+    flex-direction: column;
+  }
+
+  * .admin-panel-blog-list,
+  * .admin-panel-new-blog,
+  * .admin-panel-course-list,
+  * .admin-panel-new-course {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  * .admin-panel-new-course {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 1px;
+
+  }
+  * .admin-panel-course-list{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+ *.manage-course-heading{
+  margin-left: 1px;
+  text-align: center;
+ }
+
+
+  * .admin_appointment_content {
+    width: 100%;
+  }
+}
+
+/* Mobile styles (max-width: 480px) */
+
+/* navbar media query*/
+@media (max-width: 768px) {
+  .admin-panel-navbar .menu-icon {
+    display: block;
+    margin-right: 80px;
+  }
+
+
+  .admin-panel-navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #077;
+    text-align: center;
+  }
+
+  .admin-panel-navbar .nav-links.show {
+    display: flex;
+  }
+
+  .admin-panel-navbar a
+  {
+    margin: 10px 0;
+    background-color: transparent;
+    color: white;
+  }
+  .admin-logout-btn {
+    margin: 10px 0;
+    
+  }
+}
+/* ---- */
+@media (max-width: 480px) {
+  * .admin-panel-navbar a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  * .admin-panel-content {
+    padding: 10px;
+  }
+
+  * .admin-panel-blog-list li,
+  * .admin-panel-course-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  * .admin_appointment_buttons {
+    flex-direction: column;
+  }
+
+  * .admin_appointment_button {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* Webinar css */
+
+/* Base styling */
+/* General styles */
+.admin-panel-webinar-management {
+  display: flex;
+  flex-wrap: wrap; /* Ensures responsiveness */
+  justify-content: space-between;
+ margin-left: 20px;
+  gap: 20px;
+  
+  width: 80%;
+  
+  background-color: #ffffff; /* Sharp container background */
+  padding: 20px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; /* Sharpen the container */
+}
+
+/* Webinar heading in center with underline */
+.manage-webinar-heading {
+  
+ margin-left: 38%;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  /* border-bottom: 2px solid #3a95ce; Underline for heading */
+  display: inline-block; /* To ensure the underline stays close to the text */
+  padding-bottom: 10px; /* Space between text and underline */
+}
+
+.admin-panel-new-webinar,
+.admin-panel-webinar-list {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px #ccc; 
+}
+
+.admin-panel-new-webinar {
+  flex: 1 1 45%; /* Occupies 45% of the width on larger screens */
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.Select-platform{
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.admin-panel-webinar-list {
+  flex: 1 1 50%; /* Webinar list occupies 50% of the width */
+  max-width: 600px;
+  min-width: 300px;
+  margin-top: 6px;
+}
+
+
+/* Input fields styling */
+.admin-panel-new-webinar input,
+.edit-webinar-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Button styling */
+.admin-panel-button {
+  background-color: #3a95ce;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.admin-panel-button:hover {
+  background-color: #2384c0;
+}
+
+/* Webinar list styling */
+.admin-panel-webinar-list ul {
+  list-style-type: none;
+  padding: 0;
+  
+}
+
+.admin-panel-webinar-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+}
+
+.admin-panel-button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-panel-edit-button{
+  background-color: #007bff;
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.admin-panel-delete-button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-panel-delete-button {
+  background-color: #ff4c4c;
+}
+
+.admin-panel-edit-button:hover {
+  background-color: #0056b3;
+}
+
+.admin-panel-delete-button:hover {
+  background-color: #ff1c1c;
+}
+
+/* Modal styling */
+.edit-webinar-container {
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .admin-panel-webinar-management {
+    flex-direction: column;
+  }
+
+  .admin-panel-new-webinar,
+  .admin-panel-webinar-list {
+    width: 100%;
+  }
+
+
+
+  .admin-panel-button-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

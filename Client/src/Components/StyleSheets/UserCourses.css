@@ -1,0 +1,108 @@
+/* Outer container styling */
+.course-outer-container {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.course-outer-container h1 {
+  text-align: center;
+}
+
+.course-category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Button styling */
+#course-category-btn {
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #0096ff;
+  color: #0096ff;
+  padding: 3px 15px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+
+#course-category-btn:hover {
+  background-color: #0096ff;
+  color: white;
+}
+
+#course-category-btn.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Inner container and card styling */
+.course-inner-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.course-card-container {
+  width: 450px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.course-card-img-container {
+  width: 150px;
+  height: 150px;
+}
+
+.course-card-img-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  object-fit:contain;
+  
+}
+
+@media (max-width: 800px) {
+  .course-card-img-container {
+    width: 120px;
+    height: 120px;
+  }
+  .course-card-img-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+  }
+}
+
+.course-card-detail-container {
+  text-align: left;
+  width: 100%;
+  padding-left: 10px;
+}
+
+#topic-webinar {
+  font-weight: 900;
+  text-align: left;
+}
+
+#topic-webinar-discription {
+  font-size: 13px;
+  text-align: left;
+}
+
+.flex-webinar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

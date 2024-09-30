@@ -1,0 +1,178 @@
+/* Profile Container */
+.profile-container {
+    display: flex;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+ 
+  .profile-sidebar {
+    width: 250px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-left: 13%;
+  }
+  
+ 
+  .profile-pic-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+  }
+  
+ 
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    background-color: #fcfcfc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    overflow: hidden;
+    position: relative;
+  }
+   
+  
+ 
+  .profile-name {
+    text-align: center;
+    color: rgb(1, 1, 47);
+    font-weight: bold;
+  }
+  
+  /* Profile Menu */
+  .profile-menu {
+    margin-top: 5px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Profile Menu Links */
+  .profile-menu-links a {
+    
+    display: block;
+    padding: 10px 0;
+    cursor: pointer;
+    text-decoration: none !important;
+    color: black !important;
+  }
+  
+  /* Active Profile Menu Link */
+  .profile-menu li.active {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  /* Main Profile Section */
+  .profile-main {
+    flex-grow: 1;
+    background-color: #ffffff;
+    margin-left: 1px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+  
+  .profile-main h2,
+  .profile-main p {
+    text-align: center;
+  }
+  
+  .profile-main p {
+    margin-top: 0;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .profile-main .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .profile-main input[type="text"],
+  .profile-main textarea,
+  .profile-main select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .profile-main textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  .profile-main button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff; /* Base color */
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    background-image: linear-gradient(90deg, #0056b3 50%, #007bff 50%); /* Gradient background */
+    background-size: 200%; /* Allow for animation */
+    background-position: right; /* Start position */
+    transition: background-position 0.5s ease-in-out; /* Animation effect */
+}
+
+.profile-main button[type="submit"]:hover {
+    background-position: left; /* Change position on hover */
+}
+
+.profile-main button[type="submit"]:not(:hover) {
+    transition: none; /* Reset transition when not hovering */
+}
+
+  
+  /* Message Container */
+  .message-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    font-size: 16px;
+    color: green;
+  }
+  
+  .message-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .profile-container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .profile-sidebar {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+  
+    .profile-main {
+      margin-left: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .profile-sidebar,
+    .profile-main {
+      padding: 10px;
+    }
+  
+    .profile-menu-links a {
+      padding: 8px 0;
+    }
+  }
+  

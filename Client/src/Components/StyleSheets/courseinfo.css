@@ -1,0 +1,113 @@
+
+/* course details */
+
+.course-details-by-id-outer-container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.course-details-by-id-outer-container-h1 {
+  text-align: center;
+}
+.course-details-by-id-outer-container-p {
+  text-align: center;
+}
+
+.course-details-by-id-inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.course-details-by-id-flex-container1 {
+  width: 60%;
+  margin: 10px;
+}
+#course-video {
+  width: 100%;
+  border-radius: 20px;
+  height: 400px;
+}
+#course-details-by-id-head {
+  color: #0096ff;
+  margin-top: 0px;
+}
+#course-details-by-id-description {
+  font-size: 14px;
+  color: gray;
+}
+#course-details-by-id-created {
+  margin-top: 5px;
+}
+#course-details-by-id-posted {
+  margin-top: 5px;
+}
+#course-details-by-id-star {
+  margin-top: 5px;
+  color: #0096ff;
+}
+#course-details-by-id-description-long {
+  color: gray;
+}
+.course-details-by-id-flex-container2 {
+  margin: 10px;
+}
+#topic-icon {
+  color: #0096ff;
+}
+.course-details-by-id-flex-inner1-container2 p {
+  margin-top: 5px;
+}
+.course-details-by-id-flex-inner1-container2 {
+  width: 100%;
+}
+.course-details-by-id-flex-inner2-container2 {
+  width: 100%;
+}
+.course-details-by-id-flex-inner2-container2-btn {
+  margin-top: 20px;
+  background-color: #0096ff;
+  border: none;
+  padding: 10px;
+  border-radius: 500px;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.course-details-by-id-flex-inner2-container2-btn:hover {
+  background-color: #0095ffb4;
+}
+.course-details-by-id-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.course-details-by-id-flex p {
+  background-color: #009e60;
+  color: white;
+  padding: 3px 10px 3px 10px;
+  border-radius: 50px;
+
+}
+.course-details-by-id-flex p i {
+  background-color: #009e60;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+.course-details-by-id-flex-inner1-container2-h1 {
+  margin-top: 10px;
+}
+@media (max-width: 800px) {
+  .course-details-by-id-flex-container1 {
+    width: 90%;
+    margin: 10px;
+  }
+  .course-details-by-id-flex-container2 {
+    width: 90%;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 0;
+  }
+}

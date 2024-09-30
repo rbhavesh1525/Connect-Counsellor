@@ -1,0 +1,1781 @@
+/* *{
+ 
+  
+} */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+ 
+}
+body::-webkit-scrollbar{width: 1px;}
+
+h1,
+p {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.notification-badge {
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  background-color: rgb(255, 255, 255) !important; /* Keep the white background */
+  border: 2px solid rgb(216, 213, 207); /* Add a border around the badge */
+  border-radius: 40%; /* Make the badge circular */
+  padding: 9px 12px; /* Adjust padding to give space around the icon */
+  padding-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-badge svg {
+  margin-right: 5px;
+  color: black; /* Ensure the icon is visible on the white background */
+}
+
+
+.notifications-popover {
+  max-width: 300px; 
+  max-height: 400px; 
+  overflow-y: auto;
+  
+}
+
+.notifications-popover .popover-header {
+  background-color: #007bff;
+  color: white;
+}
+
+.notifications-popover .popover-body {
+  padding: 10px;
+}
+
+
+
+/* Navbar */
+.navbar-bg {
+  background-color:#ffffff;
+  transition: background-color 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure the navbar is above other elements */
+  border-radius: 5px;
+}
+
+.navbar-scrolled {
+border-bottom: 1px #ccc;
+  margin-top: -1px;
+}
+
+.navbar-collapse {
+  justify-content: flex-end; /* Move the navbar items to the right */
+}
+
+.nav-link.ms-lg-4 {
+  margin-left: 30px; /* Adjust spacing between nav links */
+}
+
+.Logo-img {
+  margin-left: 15px;
+}
+
+
+.nav-element {
+  margin-left: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  position: relative; /* Required for positioning the pseudo-element */
+  color: #000;
+}
+
+.nav-element::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px; /* Height of the underline */
+  background-color: #000; /* Color of the underline */
+  border-radius: 3px; /* Curved borders */
+  transition: width 0.5s;
+  position: absolute;
+  bottom: -1px; /* Adjust the gap between underline and element */
+  left: 0;
+  
+}
+
+.nav-element:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+.nav-elements {
+  margin-left: 25%;
+}
+
+.nav-elements:hover {
+  text-decoration: none; /* Remove default underline */
+}
+
+.form-control,
+.search-button {
+  border: 2px solid transparent;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.form-control {
+  max-width: 250px;
+  border: 2px solid rgb(226, 228, 228);
+  margin-right: 20px;
+  margin: 0; /* Remove default margin */
+  padding: 5px 10px; /* Adjust padding as needed */
+}
+
+/* Hover Effects */
+.form-control:hover,
+.form-control:focus,
+.search-button:hover {
+  border-color: rgb(249, 252, 253);
+  background-color: white;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 767px) {
+  .search-bar-wrapper {
+    position: relative;
+    top: -3px;
+    margin-left: 20px;
+  }
+}
+
+/* Hamburger Icon */
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.right-nav-elements {
+  margin-right: 20px;
+}
+
+.navbar-collapse.show {
+  display: flex;
+  background-color: #fff; 
+  padding: 10px;
+  flex-direction: column;
+}
+
+.navbar-collapse {
+  display: none;
+  
+}
+
+.hamburger {
+  cursor: pointer;
+}
+.nav-elements .nav-link {
+  color: black; /* White text color */
+  padding: 10px;
+  margin-left: 20px;/* Optional padding */
+}
+
+.nav-elements .nav-link:hover {
+  color: black; /* Light gray text color on hover */
+}
+
+.user-icon {
+  background-color: white !important; /* Initial background color */
+  border: 2px solid rgb(216, 213, 207);
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  color: black !important; /* Initial icon color */
+}
+
+/* Login Button */
+.navbar-login-button {
+  background-color: #f6f8fb; /* White-blue background */
+  color: #0d0d0d; /* Text color */
+  border: 2px solid #007bff; /* Border matching the white-blue background */
+  padding: 5px 16px; /* Padding for the button */
+  border-radius: 10px; /* Rounded corners */
+  font-weight: 600; /* Bold text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* color: white; */
+}
+
+.navbar-login-button:hover {
+  background-color: #007bff; /* Dark blue background on hover */
+  color: white; /* White text on hover */
+}
+
+@keyframes slideInFromLeft{
+  0%{
+    right: -50%;
+
+  }
+  100%{
+    right :0;
+  }
+}
+
+@keyframes slideOutFromLeft{
+  100%{
+    right: 0;
+  }
+  0%{
+    right: -50%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 56px; 
+    right: -50%;
+    width: 50%;
+    background-color: #007bff; 
+    padding: 10px 0;
+    border-top: 1px solid #dee2e6;
+    transition: top 0.3s ease;
+    max-height: calc(100vh - 56px); 
+    overflow-y: auto;
+    transition: left 0.5 ease;
+    transition: right 0.5 ease;
+
+    
+  }
+
+  .nav-elements{
+    text-decoration: underline;
+    margin-left: 0;
+   
+  }
+
+  .nav-element{
+    position: relative;
+    margin-left: 5px;
+    font-size: 18px;
+    padding-bottom: 120px;
+   
+    
+  }
+ 
+  .navbar-collapse.show{
+    right:0;
+    animation: slideInFromLeft 0.5s forwards;
+    
+  }
+
+  .navbar-collapse.hide{
+    animation: slideOutFromLeft 0.5s forwards ;
+  }
+
+  /* .navbar-collapse.show {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #fff; 
+    padding: 10px;
+    padding-left: 2px;
+    flex-direction: column;
+    top: 80px;
+    left:140px;
+    position: absolute;
+
+  } */
+
+  .nav-element::after{
+    content: " ";
+    display: block;
+    width: 0;
+  height: 10px;
+  background-color: #000;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  transition: width 0.5s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    
+  }
+
+  .nav-item {
+    margin-bottom: 5px;
+    text-decoration: underline; /* Adjust spacing between menu items */
+  }
+}
+
+/* -----------------------------Navbar End----------------------------- */
+
+
+
+/* -----------------------------Banner----------------------------- */
+
+/* Add this to your Banner.css file */
+
+/* Keyframes for animations */
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.doctor-symbol{
+  height: 50px;
+  width: 50px;
+  animation: upDown 2s ease-in-out infinite; /* Add animation */
+  margin-left: 100px;
+  background-color: transparent;
+}
+
+/* Animation for up-and-down movement */
+@keyframes upDown {
+  0%, 100% { transform: translateY(0); } /* Start and end position */
+  50% { transform: translateY(-10px); } /* Middle position (up) */
+}
+/* Animations */
+@keyframes fadeInAndSlide {
+  0% { opacity: 0; transform: translateX(-20px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Apply animations with delay to each word */
+.animated-word {
+  display: inline-block;
+  opacity: 0; /* Ensure text is hidden until animation starts */
+  animation: fadeInAndSlide 0.5s ease forwards;
+  
+}
+
+/* Banner Container Styles */
+.banner-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Stack elements vertically */
+  width: 100%;
+  min-height: 80vh; 
+  
+  background-color: #ffffff;
+  background-size: cover;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.quote {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px; /* Add space between quote and banner content */
+}
+
+.quote-text {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  
+}
+
+.banner-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.banner-text {
+  flex: 1;
+  padding: 20px;
+  text-align: left;
+  color: #15053d;
+}
+
+.banner-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.banner-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.get-started-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff; /* Base color */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-position 0.5s ease-in-out; /* Animation effect */
+  background-image: linear-gradient(90deg, #0056b3 50%, #007bff 50%); /* Gradient background */
+  background-size: 200%; /* Allow for animation */
+  background-position: right; /* Start position */
+}
+
+.get-started-btn:hover {
+  background-position: left; /* Change position on hover */
+}
+
+.get-started-btn:not(:hover) {
+  transition: none; /* Reset transition when not hovering */
+}
+
+
+.banner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mhealth-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-text, .banner-image {
+    max-width: 100%;
+  }
+
+  .banner-text {
+    padding: 10px 20px;
+  }
+
+  .banner-text h1 {
+    font-size: 2rem;
+  }
+
+  .banner-text p {
+    font-size: 1rem;
+  }
+
+  .get-started-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .quote {
+    margin-bottom: 10px; /* Ensure space between quote and banner content */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .banner-text p {
+    font-size: 0.9rem;
+  }
+
+  .get-started-btn {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+}
+/* Existing styles */
+.connectcounselloradvertise {
+  display: block;
+  margin: 20px auto; /* Center the image horizontally with some margin from top and bottom */
+  width: 90%; /* Increase the size from the left and right */
+  max-width: 1000px; /* Set a maximum width to control the image size */
+  border-radius: 15px; /* Add a border radius for a rounded effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow for better appearance */
+}
+
+
+/* Responsive styles (if needed) */
+@media (max-width: 768px) {
+  .connectcounselloradvertise {
+    width: 90%; /* Adjust the width for smaller screens */
+    padding: 0 5px; /* Reduce padding for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .connectcounselloradvertise {
+    width: 80%; /* Further adjust the width for very small screens */
+    padding: 0; /* Remove padding on very small screens */
+  }
+}
+
+.main-container{
+  width: 100%;
+}
+.our-speciality-outer-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}
+.our-speciality-outer-container h1{
+  text-align: center;
+  width: 50%;
+}
+.our-speciality-inner-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin-top: 20px;
+}
+.our-speciality-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-basis: 200;
+  width: auto;
+  margin: 20px;
+}
+.our-speciality-container p{
+  width: 250px;
+  text-align: center;
+}
+.our-speciality-container i{
+  background-color: rgba(233, 233, 233, 0.382);
+  padding: 10px;
+  border-radius: 500px;
+  color: #007bff;
+  background-color: transparent;
+}
+.bold{
+  font-weight: 800;
+}
+.thin{
+  font-size: 12px;
+  color: rgb(161, 161, 161);
+}
+
+.steps-outer-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 70px;
+ 
+}
+.steps-outer-flex-container{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  background-color:#007bff;
+  padding: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 20px;
+}
+.steps-outer-container p{
+color: aliceblue;
+}
+.steps-outer-container h1{
+  color: aliceblue;
+}
+.steps-inner-container2{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+ width: 50%;
+ background-color:#007bff;
+ 
+}
+.steps-inner-flex-container2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  background-color: #007bff;
+
+}
+.steps-inner-flex-container2 h1{
+  transform: translate(-25px,46px);
+  color: rgb(255, 255, 255);
+  z-index: 0;
+
+  background-color: #007bff;
+}
+.steps-inner-container1 h1{
+  background-color: #007bff;
+  width: 500px;
+}
+.steps-inner-container1 p{
+  background-color: #007bff;
+}
+.steps-inner-flex-container2 i{
+  background-color: aliceblue;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  text-align: center;
+  align-content: center;
+  border-radius: 5px;
+  z-index: 1;
+  color: #007bff;
+  
+}
+.steps-inner-flex-container2 p{
+  background-color: #007bff;
+}
+.steps-inner-container1{
+  margin-top: 50px;
+  background-color:#007bff;
+}
+.bold-white{
+  font-weight: 800;
+}
+.thin-white{
+  font-size: 12px;
+  color: white;
+}
+.trust-outer-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+ 
+
+}
+.trust-inner-container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+
+}
+.thin2{
+  font-size: 12px;
+  width:250px;
+  text-align: center;
+}
+.trust-inner-flex-container{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 200;
+  margin: 20px;
+}
+.trust-inner-flex-container i{
+  color: #007bff;
+  width: 40px;
+  height: 40px;
+
+  text-align: center;
+  align-content: center;
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .steps-outer-flex-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .steps-inner-container1 {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .steps-inner-container1 h1 {
+    width: auto;
+  }
+
+  .steps-inner-container2 {
+    width: 100%;
+    grid-template-columns: 1fr; /* Stack elements in one column */
+  }
+
+  .steps-inner-flex-container2 {
+    align-items: center;
+    text-align: center;
+    margin: 15px 0;
+  }
+
+  .steps-inner-flex-container2 h1 {
+    transform: none;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .steps-outer-flex-container {
+    padding: 15px;
+  }
+
+  .steps-inner-flex-container2 {
+    margin: 10px 0;
+  }
+
+  .steps-inner-flex-container2 h1 {
+    font-size: 1.5rem;
+  }
+
+  .steps-inner-flex-container2 i {
+    width: 25px;
+    height: 25px;
+  }
+
+  .steps-inner-flex-container2 p {
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+/* Float Webinar */
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); 
+  }
+  100% {
+    transform: translateY(0); 
+  }
+}
+
+
+  .floatwebinar-container {
+    position: fixed;
+     bottom: 20px; 
+    right: 20px; /* Add space from the right to ensure it doesn't cause overflow */
+    z-index: 99;
+    cursor: pointer;
+    background-color: transparent;
+    animation: floatUpDown 1s ease-in-out infinite; /* Floating animation */
+  }
+
+  .floatwebinar-outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    padding: 10px 15px; /* Reduced padding for better control */
+    border-radius: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.082);
+    
+    max-width: 90vw; 
+    overflow: hidden;
+  }
+
+  .floatwebinar-outer-container i,
+  .floatwebinar-outer-container p {
+    color: white;
+    margin: 0 5px; /* Adjust margins for icons and text */
+    font-size: 18px;
+    background-color: transparent;
+  }
+
+
+  @media (max-width: 768px) {
+    .floatwebinar-outer-container {
+      padding: 5px 10px; /* Reduce padding for tablet */
+      border-radius: 35px; /* Slightly smaller border-radius */
+      margin-bottom: -5px;
+    }
+    
+    .floatwebinar-outer-container i,
+    .floatwebinar-outer-container p {
+      font-size: 16px; /* Reduce font size for tablet */
+    }
+  }
+  
+  /* Mobile view adjustments (max-width: 480px) */
+  @media (max-width: 480px) {
+    .floatwebinar-outer-container {
+      padding: 6px 10px; /* Further reduce padding for mobile */
+      border-radius: 30px; /* Smaller border-radius */
+    }
+  
+    .floatwebinar-outer-container i,
+    .floatwebinar-outer-container p {
+      font-size: 11px; /* Reduce font size for mobile */
+    }
+    
+    .floatwebinar-container {
+      bottom: 15px; /* Adjust button positioning for smaller screens */
+      right: 15px;
+    }
+  }
+
+
+
+/* Banner end */
+
+
+
+
+
+
+
+
+/*-------------------------- SignupForm.css -------------------------------------*/
+
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-top: 50px;
+}
+
+.signup-form-container {
+  display: flex;
+  max-width: 1500px; /* Increased container width */
+  margin: 10px auto;
+  padding: 30px; /* Increased padding */
+  padding-left: 70px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form-left {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 400px;
+  width: 400px;
+  margin-top: 40px;
+}
+
+.signup-form-left img {
+  width: 120%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-right: 40px;
+}
+
+.signup-CCLOGO{
+  display: none;
+}
+
+.signup-form-right {
+  flex: 1;
+  padding: 50px; /* Increased padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text */
+}
+
+.signup-form {
+  width: 100%; /* Ensure the form takes up full width */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the form elements */
+}
+
+.signup-form-group {
+  margin-bottom: 20px;
+  width: 100%; /* Ensure input fields take full width */
+}
+
+.signup-form-group input {
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px; /* Reduced font size */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+.signup-button {
+  width: 100%; /* Ensure button takes full width */
+  padding: 10px;
+  background-color: #007bff; /* Base color */
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 15px;
+  background-image: linear-gradient(90deg, #0056b3 50%, #007bff 50%); /* Gradient background */
+  background-size: 200%; /* Allow for animation */
+  background-position: right; /* Start position */
+  transition: background-position 0.5s ease-in-out; /* Animation effect */
+}
+
+.signup-button:hover {
+  background-position: left; /* Change position on hover */
+}
+
+.signup-button:not(:hover) {
+  transition: none; /* Reset transition when not hovering */
+}
+
+
+.signup-login-box {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.signup-login-link {
+  color: #007bff;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.signup-login-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.registration-heading {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-align: center; /* Ensure heading text is centered */
+  width: 100%; /* Ensure heading takes up full width */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .signup-form-container {
+    flex-direction: column; /* Stack elements vertically on small screens */
+    padding: 20px; /* Reduce padding */
+    max-width: 90%; /* Adjust max width for better fit */
+  }
+
+  .signup-form-left {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Allow height to adjust */
+    margin-top: 0; /* Reset margin */
+  }
+
+  .signup-form-left img {
+    width: 100%; /* Full width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0; /* Reset margin */
+  }
+
+  .signup-form-right {
+    padding: 20px; /* Reduce padding for mobile */
+  }
+
+  .signup-button {
+    padding: 12px; /* Increase button padding */
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .signup-form-group input {
+    padding: 12px; /* Increase input padding */
+  }
+
+  .registration-heading {
+    font-size: 1.5rem; /* Adjust heading size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .signup-container {
+    font-size: 18px; 
+    border: none;
+    
+  }
+.signup-form-container{
+  border: none;
+  width: 120%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 254, 254, 0.1);
+}
+
+  .signup-button {
+    font-size: 14px; /* Adjust button font size */
+  }
+  
+  .registration-heading{
+    font-size: 0.9rem;
+  }
+  .signup-form-left img{
+    display: none;
+  }
+  .signup-CCLOGO{
+    height: 80px;
+    width: 200px;
+    display: block;
+  }
+  .signup-login-box {
+    font-size: 14px; /* Adjust font size for login box */
+  }
+
+  .signup-form-group {
+    margin-bottom: 15px; /* Reduce margin for inputs */
+    width: 120%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+  }
+}
+
+
+
+
+/* Footer */
+
+.footer, .footer * {
+  background-color: #f3eeee; /* Silver-like color for the entire footer */
+  color: #010101; /* Text color for better contrast */
+}
+.footer {
+  padding: 20px;
+  margin-bottom: -26px;
+  text-align: left; /* Ensure text alignment */
+}
+
+
+.footer-col-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start; /* Ensure columns start from the top */
+  flex-wrap: wrap;
+  margin-left: 10%;
+}
+
+.footer-column {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+  text-align: left; 
+}
+
+.footer-column h3 {
+  margin-bottom: 10px;
+  text-align: left; 
+}
+
+.footer-column ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 5px;
+}
+
+.footer-column a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-column a:hover {
+  color: rgb(20, 78, 101);
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: inherit;
+  font-size: 1.5em;
+}
+
+.social-icons a:hover {
+  color: rgb(20, 78, 101);
+}
+
+.Copyright-section {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 2px solid #007bff;
+  padding-top: 10px;
+  color: inherit;
+}
+
+.copyright {
+  margin-top: 15px;
+}
+.Copyright-section span a {
+  text-decoration: none;
+}
+
+.website-name {
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .footer-col-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    margin: 10px 0;
+  }
+}
+
+.footer-list-item {
+  position: relative;
+  padding-left: 20px;
+}
+
+.footer-list-item:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #337ab7;
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+
+
+
+
+
+
+/* footer end*/
+
+
+
+/* forgot password page  */
+
+.forgotpass-container {
+
+  width: 700px; /* Increased container width */
+  min-height: 450px; /* Increased container height */
+  margin: 0px auto;
+  margin-top: 80px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px; /* Increased the border radius */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added subtle shadow for depth */
+}
+
+.forgotpass-left {
+  flex: 1;
+  padding-right: 20px; /* Increased padding */
+}
+
+.forgotpass-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.forgot-CCLOGO{
+  display: none;
+}
+
+.forgotpass-right {
+  flex: 1;
+  padding-left: 20px; /* Increased padding */
+}
+
+.forgot-pass-head {
+  text-align: center;
+  font-size: 28px; /* Increased font size */
+  margin-bottom: 30px;
+  color: #0c0c0c; /* Matching the border color */
+}
+
+.forgotpass-form-container {
+  text-align: center;
+}
+
+.forgotpass-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forgotpass-form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.forgotpass-form-group label {
+  display: block;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.forgot-pass-input {
+  width: 100%;
+  padding: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc; /* Match the container border */
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+
+.forgotpass-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Base color */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  background-image: linear-gradient(90deg, #0056b3 50%, #007bff 50%); /* Gradient background */
+  background-size: 200%; /* Allow for animation */
+  background-position: right; /* Start position */
+  transition: background-position 0.5s ease-in-out; /* Animation effect */
+}
+
+.forgotpass-button:hover {
+  background-position: left; /* Change position on hover */
+}
+
+.forgotpass-button:not(:hover) {
+  transition: none; /* Reset transition when not hovering */
+}
+
+
+.forgotpass-success-message {
+  color: #007bff;
+  text-align: center;
+}
+
+.forgotpass-error-message {
+  color: red;
+  text-align: center;
+}
+
+.forgotpass-login-redirect {
+  margin-top: 20px;
+  /* border: 1px solid #ccc; */
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+  
+}
+
+.forgotpass-login-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+}
+
+.forgotpass-login-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .forgotpass-container {
+    flex-direction: column;
+  }
+
+  .forgotpass-left, .forgotpass-right {
+    padding: 0;
+  }
+
+  .forgotpass-left {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 468px) {
+  .forgotpass-container {
+    width: 90%;
+    padding: 15px; 
+    flex-direction: column; 
+    min-height: auto; 
+    box-shadow: 0px 4px 8px rgba(241, 241, 241, 0.1); 
+    border: none;
+  }
+
+  .forgotpass-left, .forgotpass-right {
+    flex: 1;
+    padding: 0;
+    margin: 0;
+    text-align: center; 
+  }
+
+  .forgotpass-left {
+    margin-bottom: 20px;
+
+  }
+  .forgot-pass-head{
+    font-size: 0.9rem;
+  }
+  .forgot-pass-input{
+    width: 115%;
+  }
+
+  .forgotpass-image {
+    display: none;
+  }
+  .forgot-CCLOGO{
+    height: 100px;
+    width: 200px;
+    display: block;
+    margin-left: 30px;
+  }
+.forgot-pass-input{
+  margin-left: -20px;
+  
+}
+  .forgot-pass-head {
+    font-size: 24px; /* Adjust the font size */
+    margin-bottom: 20px; /* Reduce the margin */
+  }
+
+  .forgotpass-button {
+    font-size: 14px; /* Decrease button font size */
+    padding: 10px; /* Adjust padding for the button */
+  }
+
+  .forgotpass-form-group {
+    margin-bottom: 10px; /* Reduce form group margin */
+  }
+
+  .forgotpass-login-redirect {
+    margin-top: 15px; /* Adjust spacing */
+    padding: 8px; /* Adjust padding */
+  }
+}
+
+
+
+/* forgot password end */
+
+
+/*  Reset password  */
+
+.reset-password-container {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 100px;
+  min-height: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.reset-password-header {
+  margin-bottom: 20px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.reset-password-left {
+  flex: 1;
+  padding: 20px;
+}
+
+.reset-password-left img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.reset-password-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.reset-password-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.reset-password-form-group {
+  margin-bottom: 15px;
+}
+
+.reset-password-form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.reset-password-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff; /* Base color */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #0056b3 50%, #007bff 50%); /* Gradient background */
+  background-size: 200%; /* Allow for animation */
+  background-position: right; /* Start position */
+  transition: background-position 0.5s ease-in-out; /* Animation effect */
+}
+
+.reset-password-button:hover {
+  background-position: left; /* Change position on hover */
+}
+
+.reset-password-button:not(:hover) {
+  transition: none; /* Reset transition when not hovering */
+}
+
+
+.reset-password-success-message {
+  color: #28a745;
+}
+
+.reset-password-error-message {
+  color: #dc3545;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .reset-password-container {
+    display: none;
+  }
+}
+
+
+
+/* reset password end */
+
+
+
+
+/* webinar info css */
+
+/* Container for the webinar info */
+.webinar_info_container {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333333;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading and error messages */
+.webinar_info_loading, .webinar_info_error {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Main content of the webinar info */
+.webinar_info_content {
+  text-align: left;
+}
+
+/* Title of the webinar */
+.webinar_info_title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+/* Webinar details like presenter, date, time, etc. */
+.webinar_info_presenter,
+.webinar_info_date,
+.webinar_info_time,
+.webinar_info_description,
+.webinar_info_link,
+.webinar_info_platform,
+.webinar_info_meetingId,
+.webinar_info_meetingPass {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* Link for the meeting */
+.webinar_info_link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.webinar_info_link a:hover {
+  text-decoration: underline;
+}
+
+/* Back button styling */
+.webinar_info_back_button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.webinar_info_back_button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .webinar_info_container {
+      padding: 15px;
+  }
+
+  .webinar_info_title {
+      font-size: 24px;
+  }
+
+  .webinar_info_presenter,
+  .webinar_info_date,
+  .webinar_info_time,
+  .webinar_info_description,
+  .webinar_info_link,
+  .webinar_info_platform,
+  .webinar_info_meetingId,
+  .webinar_info_meetingPass {
+      font-size: 14px;
+  }
+
+  .webinar_info_back_button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .webinar_info_container {
+      padding: 10px;
+  }
+
+  .webinar_info_title {
+      font-size: 20px;
+  }
+
+  .webinar_info_presenter,
+  .webinar_info_date,
+  .webinar_info_time,
+  .webinar_info_description,
+  .webinar_info_link,
+  .webinar_info_platform,
+  .webinar_info_meetingId,
+  .webinar_info_meetingPass {
+      font-size: 12px;
+  }
+
+  .webinar_info_back_button {
+      font-size: 12px;
+      padding: 6px 12px;
+  }
+}
+
+
+/* webinar info css ends */
+
+
+
+
+.slot-button:disabled {
+  background-color: grey;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+
+
+/* 404 error page css*/
+
+/* General container for centering */
+.error_404_page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color:white; /* Light blue background */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Styling for the error image */
+.error_404_page-image {
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Styling for the large 404 error code */
+.error_404_page-code {
+  font-size: 150px;
+  font-weight: bold;
+  color: #007bff; /* Primary blue color */
+  margin: 0;
+}
+
+/* Main error message */
+.error_404_page-message {
+  font-size: 24px;
+  color: #007bff; /* Darker blue */
+  margin-top: 20px;
+}
+
+/* Description under the error message */
+.error_404_page-description {
+  font-size: 18px;
+  color: #007bff; /* Medium blue */
+  margin-bottom: 40px;
+}
+
+/* Styling for the home button */
+.error_404_page-home-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.error_404_page-home-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+/* 404 error page css ends */
+
+
+/* privacy policy  starts */
+.privacy-policy-outer-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.privacy-policy-inner-container {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.privacy-policy-outer-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 81%;
+  background-color: rgba(190, 190, 190, 0.232);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+}
+.privacy-policy-outer-flex-container i {
+  background: transparent;
+  color: #0096ff;
+}
+.privacy-policy-flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.privacy-policy-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+  background-color: rgba(190, 190, 190, 0.232);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 15px;
+}
+.privacy-policy-container i {
+  background: transparent;
+  color: #0096ff;
+  cursor: pointer;
+  font-weight: 1000;
+}
+#privacy-content {
+  margin-top: 10px;
+}
+#privacy-policy-outer-container-h1 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+#privacy-policy-outer-container-p {
+  margin-bottom: 30px;
+  text-align: center;
+  align-content: center !important;
+  background-color: transparent !important;
+}
+
+/* privacy policy ends */

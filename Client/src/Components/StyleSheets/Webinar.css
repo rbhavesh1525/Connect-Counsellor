@@ -1,0 +1,121 @@
+*{
+  margin: 0;
+  padding: 0;
+  
+}
+
+
+.webinar-outer-container{
+  width: 100%;
+  margin-bottom: 60px;
+  
+
+}
+.webinar-inner-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+
+}
+.webinar-card-container{
+  display: flex;
+  justify-content: center;
+ margin: 10px;
+  flex-direction: column;
+  width: 350px;
+  
+  background-color: #ffffffd5;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.11);
+
+}
+#webinar-meet-img {
+  
+  
+  text-align: center;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0px;
+
+  
+}
+.webinar-flex-container{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+#webinar-title{
+  font-weight: 700;
+  line-height: 1;
+}
+#webinar-discription{
+  font-size: 14px;
+  /* margin-top: 10px; */
+  white-space: nowrap; /* Keeps the text on a single line */
+    max-width: 250px;    /* Limits the width of the element */
+    overflow: hidden;    /* Hides the overflow text */
+    text-overflow: ellipsis;
+}
+.webinae-head-description{
+  text-align: center;
+  margin-top: 10px;
+  
+}
+.webinae-head-description p{
+  font-style: italic;
+  margin-top: 10px;
+}
+
+#webinar-time-date{
+  line-height: 1;
+}
+#expired {
+  color: #E0115F;
+  
+}
+#webinar-creator i{
+ color: #0096FF;
+ background-color: transparent;
+
+}
+.webinar-flex-container p{
+  line-height: 1;
+}
+.webinar-enroll-btn{
+  /* margin-top: 20px; */
+  background-color: #009E60;
+  border: none;
+  padding: 10px;
+  border-radius: 500px;
+  color: white;
+  cursor: pointer;
+}
+.webinar-enroll-btn i{
+  background-color: transparent;
+  color: white;
+}
+
+.webinar-enroll-btn:hover{
+  background-color: #009e5fc8;
+}
+.webinar-enroll-expire-btn{
+  
+  background-color: rgb(64, 64, 64);
+  border: none;
+  padding: 10px;
+  border-radius: 500px;
+  color: white;
+  cursor: pointer;
+}
+.webinar-enroll-expire-btn i{
+  background-color: transparent;
+}
+#upcoming{
+  color: #009E60;
+}

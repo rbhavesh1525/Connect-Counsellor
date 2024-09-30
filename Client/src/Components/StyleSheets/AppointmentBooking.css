@@ -1,0 +1,226 @@
+/* AppointmentBooking.css */
+
+/* General Styles */
+.appointment-booking {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+ /* border: 0.2px solid gray;
+  */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+
+}
+
+.Notelable1 {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+
+#appointment-booking_input{
+
+  width:700px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+
+
+/* Adjusted Button Width */
+.submit-button {
+  display: inline-block;
+  width: 312px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  
+  background-image: linear-gradient(90deg, #0056b3 50%, #007bff 50%);
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-position 0.5s ease; /* Animate background position */
+  text-align: center;
+  align-items: center;
+  margin-top: 5px;
+  cursor: pointer;
+  background-size: 200%; /* Make the background image larger to allow for movement */
+  background-position: right; /* Start position of the gradient */
+}
+
+ /* Ensure consistent font size */
+
+
+
+.submit-button:hover {
+  background-position: left; /* End position of the gradient on hover */
+}
+
+.submit-button:not(:hover) {
+  transition: background-position 0.5s ease; /* Smooth transition back to initial position */
+}
+
+
+.message {
+  text-align: center;
+  color: #007bff;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* DatePicker Styles */
+.date-picker {
+  width: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+}
+.react-datepicker__day--selected {
+  background-color: #007bff;  /* Custom background color */
+  color: white;               /* Text color */
+  font-weight: bold;          /* Bold text for emphasis */
+  border-radius: 50%;         /* Make it circular */
+  border: 2px solid #007bff;  /* Border around the selected date */
+}
+
+.react-datepicker__day--selected:hover {
+  background-color: #007bff;  /* Darken the background color when hovered */
+  border-color: #007bff;      /* Darken the border on hover */
+}
+
+.react-datepicker__header {
+  text-align: center;
+  background-color: #ffffff;
+  /* border-bottom: 1px solid #aeaeae; */
+  border-top-left-radius: 0.3rem;
+  padding: 0px 0;
+  position: relative;
+}
+
+.react-datepicker__current-month{
+    margin-top: -9px;
+    padding-top: 0px;
+    /* background-color: white; */
+}
+
+.react-datepicker__day--selected  {
+  border-radius: 0.3rem;
+  background-color: #007bff;
+  color: #fff;
+}
+
+
+/* Slot Buttons */
+.slot-button,
+.afternoon-slot-button {
+  width: 96px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slot-button:hover,
+.afternoon-slot-button:hover {
+  background-color: #e2e6ea;
+}
+
+.slot-button.selected,
+.afternoon-slot-button.selected {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.slot-button:disabled,
+.afternoon-slot-button:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Flexbox Layout for Date and Slot */
+.wrapper_date_slot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form-group,
+.rightwrapper {
+  flex: 1;
+}
+
+.rightcontainerslot {
+  display: flex;
+  flex-direction: column;
+}
+
+.slots-section,
+.afternoon-slot-section {
+  margin-bottom: 5px;
+}
+i{
+  color:#007bff;
+}
+.slot-group-label,
+.afternoon-slot-group-label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+  color:#007bff
+}
+
+.slots-container,
+.afternoon-slot-container,
+.slots-container_eve {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .wrapper_date_slot {
+    flex-direction: column;
+  }
+
+
+  #appointment-booking_input {
+    width: 100%; /* Full width for better fit on smaller screens */
+    padding: 8px; /* Slightly reduce padding */
+  }
+  .rightwrapper {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .submit-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  #appointment-booking_input {
+    width: 100%; /* Full width */
+    padding: 6px; /* Further reduce padding for smaller screens */
+  }
+}
+
+
+
+
+

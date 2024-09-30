@@ -1,0 +1,249 @@
+.login-form-outer-container{
+display: flex;
+justify-content: center;
+align-content: center;
+}
+
+.login-form-container {
+  display: flex;
+  max-width: 800px;
+  min-height: 500px;
+  margin: 90px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  flex-wrap: wrap; 
+}
+
+.login-heading {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  flex-basis: 100%;
+}
+
+.login-image {
+  flex: 1;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 0 0 10px; 
+  max-width: 50%;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  margin: 60px auto;
+}
+
+.Login-CCLOGO{
+  display: none;
+}
+
+.login-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 50%;
+}
+/* Updated css */
+
+.login-form-group {
+  margin-bottom: 15px;
+}
+
+.login-form-group input {
+  width: 100%;
+  padding: 8px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+
+}
+
+.login-button {
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  font-size: 1rem; /* Ensure consistent font size */
+  color: #fff;
+  background-color: #007bff; /* Fallback color */
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #0056b3 50%, #007bff 50%);
+  background-size: 200%; /* Control the size for the animation effect */
+  background-position: right; /* Start from the right */
+  transition: background-position 0.5s ease-in-out; /* Animation transition */
+}
+
+.login-button:hover {
+  background-position: left; /* Move the gradient on hover */
+}
+
+.login-button:not(:hover) {
+  transition: none; /* Disable transition when not hovering */
+}
+
+
+.login-extra-container {
+  /* border: 1px solid #ccc; */
+  margin-top: 15px;
+  border-radius: 15px;
+}
+
+.login-signup-redirect {
+  display: flex;
+  justify-content: space-around;
+ 
+  margin-top: 20px;
+}
+
+.login-signup-redirect span {
+  align-self: center;
+}
+
+.login-forgotpass-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  margin: 0px 30%;
+  padding-top: 10px;
+}
+
+.login-forgotpass-link:hover {
+  text-decoration: underline;
+}
+
+.login-signup-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  
+}
+
+.login-signup-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+/* Updated CSS for smaller screens */
+@media (max-width: 768px) {
+  .login-form-container {
+    flex-direction: column; /* Stack items vertically on small screens */
+    min-height: auto; /* Remove minimum height for better fit */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .login-image {
+    max-width: 100%; /* Full width for images */
+    height: auto; /* Adjust height automatically to maintain aspect ratio */
+    border-radius: 10px 10px 0 0; /* Adjust corners for top */
+    margin-bottom: 10px; /* Add margin for spacing */
+  }
+
+  .login-form {
+    max-width: 100%; /* Full width for forms */
+    padding: 10px; /* Reduce padding for mobile view */
+  }
+
+  .login-button {
+    padding: 12px; /* Increase button padding */
+    font-size: 1rem; /* Adjust button font size */
+  }
+
+  .login-signup-redirect {
+    flex-direction: column; /* Stack redirect links vertically */
+    align-items: center; /* Center items */
+    margin-left: 0; /* Reset margin for mobile */
+  }
+
+  .login-signup-redirect span {
+    margin-bottom: 10px; /* Add margin for spacing */
+  }
+
+  .login-form-group input {
+    padding: 12px; /* Increase input padding */
+  }
+
+  .login-heading {
+    font-size: 1.2rem; /* Adjust heading size for mobile */
+  }
+}
+/* Responsive Styles for 468px screens */
+@media (max-width: 468px) {
+  .login-form-outer-container {
+    padding: 0 10px; 
+   height: 700px;
+
+  }
+
+  .login-form-container {
+    flex-direction: column;
+    min-height: auto;
+    border: none;
+   
+    width: 120%; 
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+
+  .login-image {
+    
+    display: none;
+  }
+
+  .Login-CCLOGO{
+    height: 200px;
+    width: 200px;
+   display: block;
+   margin-left: 60px;
+  }
+
+
+  .login-form {
+    width: 120%;
+    padding: 8px;
+    margin-bottom: 200px;
+  }
+
+  .login-button {
+    padding: 10px;
+    font-size: 0.9rem; /* Slightly reduce font size for narrower screens */
+  }
+
+  .login-signup-redirect {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .login-signup-redirect span {
+    margin-bottom: 8px; /* Adjust spacing for mobile */
+  }
+
+  .login-form-group input {
+    padding: 10px;
+    padding-right: 20px;
+  }
+
+  .login-heading {
+    font-size: 1rem; /* Smaller font for headings */
+    margin-bottom: -75px; 
+  }
+}
+
+

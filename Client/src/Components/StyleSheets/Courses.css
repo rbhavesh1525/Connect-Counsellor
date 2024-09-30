@@ -1,0 +1,130 @@
+/* course */
+.course-outer-container {
+  width: 100%;
+  margin-top: 50px;
+   }
+.course-outer-container h1 {
+  text-align: center;
+}
+.course-outer-container p {
+  text-align: center;
+  margin: 3px 10px 3px 10px;
+  
+}
+.course-inner-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.course-card-container {
+  width: 450px;
+  
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  align-items: stretch;
+  box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.course-card-img-container {
+  width: 150px;
+  height: auto; 
+}
+.course-card-img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.course-card-detail-container {
+  width: calc(100% - 160px); /* Adjust width to account for image width and spacing */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure content is spaced properly */
+}
+
+@media (max-width: 800px) {
+  .course-card-img-container {
+    width: 120px;
+    height: 120px;
+  }
+  .course-card-img-container img {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
+  }
+}
+.course-category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+#course-category-btn {
+  text-decoration: none;
+  border-radius: 30px;
+  border: 1px solid #0096ff;
+  color: #0096ff;
+  padding: 3px 15px 3px 15px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background-color: white;
+}
+#course-category-btn:hover {
+  border: 1px solid #0096ff;
+  color: white;
+  background-color: #0096ff;
+}
+.course-card-detail-container {
+  text-align: left;
+  width: 100%;
+}
+#topic-webinar {
+  font-weight: 900;
+  text-align: left;
+}
+#topic-webinar-discription {
+  font-size: 13px;
+  text-align: left;
+}
+.flex-webinar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+#topic-webinar-discription i {
+  color: #0096ff;
+  
+
+}
+#topic-webinar-discription-rating{
+  position:absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+#webinar-view-btn {
+  font-size: 25px;
+  color: #0096ff;
+  position: absolute;
+ right: 0;
+  bottom: 0;
+  cursor: pointer;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+#course-category-btn.selected {
+  background-color: #007bff; /* Blue background color */
+  color: #fff; /* White text color */
+}

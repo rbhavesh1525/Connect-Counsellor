@@ -1,0 +1,115 @@
+/* Blog Container */
+.blog-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* Blog Card */
+.blog-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  margin: 0 60px;
+  padding: 20px;
+}
+
+/* Blog Card Hover Effect */
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Blog Image */
+.blog-image {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  margin-right: 40px;
+}
+
+/* Blog Content */
+.blog-content {
+  flex: 1;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify; /* This will justify the text */
+}
+
+/* Blog Title */
+.blog-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0044cc;
+}
+
+/* Blog Meta */
+.blog-meta {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.blog-meta small {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.blog-date {
+  margin-left: 10%;
+}
+
+/* Category Badge */
+#inner-blog-category {
+  width: 18%;
+  text-align: center;
+  padding: 1px;
+  background-color: rgba(0, 0, 255, 0.13);
+  border-radius: 20px;
+  color: blue;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Blog Card Stacking */
+  .blog-card {
+    flex-direction: column;
+    padding: 10px; /* Reduce padding for smaller screens */
+    margin: 0 20px; /* Reduce side margins */
+  }
+
+  /* Full-width Blog Image */
+  .blog-image {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+  }
+
+  /* Adjust Blog Content Padding */
+  .blog-content {
+    width: 100%;
+    padding: 10px 0; /* Reduce padding on smaller screens */
+  }
+
+  /* Adjust Blog Meta Alignment */
+  .blog-meta {
+    flex-direction: column;
+    align-items: flex-start; /* Align meta content to the start */
+  }
+
+  .blog-date {
+    margin-left: 0; /* Remove extra margin on smaller screens */
+  }
+
+  /* Adjust Category Badge Size */
+  #inner-blog-category {
+    width: 40%; /* Make category badge smaller on mobile */
+  }
+}
