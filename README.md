@@ -17,7 +17,7 @@ A dynamic and responsive full-stack web platform that connects users with certif
 - 🔒 **User Authentication:** Secure login/signup system using JWT.
 - 📂 **User Dashboard:** View booking history and session details.
 - 📱 **Responsive Design:** Optimized for all screen sizes.
-- 💳 Payment gateway integration
+- 💳 **Payment gateway ** integration
 
 ## 📂 Project Structure
 
@@ -26,6 +26,10 @@ server/ # Backend (Express + MongoDB)
 ├── controllers/
 ├── models/
 ├── routes/
+├── Utils/
+├── Middleware/
+
+
 
 
 ## 🚀 Getting Started
