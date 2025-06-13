@@ -52,7 +52,8 @@ npm install
 # Run frontend and backend (in separate terminals)
 npm start  # for both client and server
 
-📌 Future Improvements'
+```
+📌 Future Improvements
 
 - 📞 Video/voice session integration
 
